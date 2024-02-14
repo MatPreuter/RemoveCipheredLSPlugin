@@ -11,17 +11,17 @@ window.sqlitePlugin.openDatabase = function(options, successCallback, errorCallb
         var dbObj = { name: ApplicationInfo.getDatabaseName(), location: "default" };
 
 	    return originalOpenDatabase.call(window.sqlitePlugin, options, successCallback, function() {
-		    window.sqlitePlugin.deleteDatabase(options, function() {
-				var now = new Date();
-				now.setTime(now.getTime() + 1 * 3600 * 1000);
-	
-				document.cookie = "NewDatabaseIsCreated=1; expires=" + now.toUTCString() + "; path=/";
-				
-			    window.sqlitePlugin.openDatabase(options, successCallback, errorCallback);
-		    }, function() {
-			    errorCallback();
-		    });
-	    });
+		        sqlitePlugin.deleteDatabase(options, function() {
+                    var now = new Date();
+                    now.setTime(now.getTime() + 1 * 3600 * 1000);
+        
+                    document.cookie = "NewDatabaseIsCreated=1; expires=" + now.toUTCString() + "; path=/";
+                    
+                    window.sqlitePlugin.openDatabase(options, successCallback, errorCallback);
+                }, function() {
+                    errorCallback();
+                });
+            });
         },
         errorCallback);
 };
