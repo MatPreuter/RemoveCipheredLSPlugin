@@ -18,7 +18,6 @@ window.sqlitePlugin.openDatabase = function(options, successCallback, errorCallb
             }, function() {
                 // Error - connection is not working, likely the database file is corrupt
                 // Delete the database, and reload the screen so a new empty database will be created
-                document.cookie = "NewDatabaseIsCreated=1; expires=" + now.toUTCString() + "; path=/";
 
                 sqlitePlugin.deleteDatabase(dbObj, function() {
                     var now = new Date();
