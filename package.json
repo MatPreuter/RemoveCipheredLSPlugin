@@ -1,11 +1,5 @@
 {
   "name": "removecipheredlsplugin",
   "version": "1.0.0",
-  "description": "Remove Ciphered Local Storage",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "",
-  "license": "ISC"
+  "author": "Matthias Preuter <matthias@preuter.eu",
 }
