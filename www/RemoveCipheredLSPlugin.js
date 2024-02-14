@@ -3,8 +3,9 @@
 var ApplicationInfo = require("OutSystems/ClientRuntime/ApplicationInfo")
 var originalOpenDatabase = window.sqlitePlugin.openDatabase;
 window.sqlitePlugin.openDatabase = function(options, successCallback, errorCallback) {
- 
-    return originalOpenDatabase.call(window.sqlitePlugin, options, successCallback, function() {
+
+	return originalOpenDatabase.call(window.sqlitePlugin, options, successCallback, errorCallback);
+/*    return originalOpenDatabase.call(window.sqlitePlugin, options, successCallback, function() {
 
         var now = new Date();
         now.setTime(now.getTime() + 1 * 3600 * 1000);
@@ -24,4 +25,5 @@ window.sqlitePlugin.openDatabase = function(options, successCallback, errorCallb
             });
         },
         errorCallback);
+*/	
 };
