@@ -1,6 +1,5 @@
 // Override existing openDatabase to automaticly cdelete and recreate a sqllte database when it is corrupt
 
-var ApplicationInfo = require("OutSystems/ClientRuntime/ApplicationInfo")
 var originalOpenDatabase = window.sqlitePlugin.openDatabase;
 window.sqlitePlugin.openDatabase = function(options, successCallback, errorCallback) {
 
