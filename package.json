@@ -1,4 +1,5 @@
 {
   "name": "RemoveCipheredLSPlugin",
-  "author": "Matthias Preuter <matthias@preuter.eu",
+  "version": "0.1.2",
+  "author": "Matthias Preuter <matthias@preuter.eu"
 }
