@@ -1,5 +1,19 @@
 {
-  "name": "RemoveCipheredLSPlugin",
-  "version": "0.1.2",
-  "author": "Matthias Preuter <matthias@preuter.eu"
+  "name": "removecipheredlsplugin",
+  "version": "1.0.0",
+  "description": "Plugin to remove ciphered local storage database and create an unciphered local database",
+  "main": "RemoveCipheredLSPlugin.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MatPreuter/RemoveCipheredLSPlugin"
+  },
+  "author": "Matthias Preuter",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/MatPreuter/RemoveCipheredLSPlugin/issues"
+  },
+  "homepage": "https://github.com/MatPreuter/RemoveCipheredLSPlugin#readme"
 }
