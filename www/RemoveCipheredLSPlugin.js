@@ -1,8 +1,11 @@
-window.NewDatabaseIsCreated = -1;
+const NewDatabase = (() => {
+  let globalNewDatabase = -1;
 
-function GetNewDatabaseIsCreated() {
-  return window.NewDatabaseIsCreated;
-};
+  const getValue = () => globalNewDatabase;
+  const setValue = (newValue) => { globalNewDatabase = newValue; };
+
+  return { getValue, setValue };
+})();
 
 // Override existing openDatabase to automatically provide the `key` option
 var originalOpenDatabase = window.sqlitePlugin.openDatabase;
@@ -10,7 +13,7 @@ window.sqlitePlugin.openDatabase = function(options, successCallback, errorCallb
 
     return originalOpenDatabase.call(window.sqlitePlugin, options, successCallback, function() {
 	    sqlitePlugin.deleteDatabase(options, function() {
-		    window.NewDatabaseIsCreated = 1;
+		    NewDatabase.setValue(1);
 		    window.sqlitePlugin.openDatabase(options, successCallback, errorCallback);
 	    }, function() {
 		    errorCallback();
@@ -18,4 +21,4 @@ window.sqlitePlugin.openDatabase = function(options, successCallback, errorCallb
     });
 };
 
-module.exports = new GetNewDatabaseIsCreated();
+module.exports = new NewDatabase();
