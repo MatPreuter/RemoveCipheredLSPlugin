@@ -17,3 +17,5 @@ window.sqlitePlugin.openDatabase = function(options, successCallback, errorCallb
 	    });
     });
 };
+
+module.exports = new GetNewDatabaseIsCreated();
